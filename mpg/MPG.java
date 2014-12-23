@@ -16,17 +16,21 @@ public class MPG {
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+		//Set up outer Panel to hold miles and gallons
 		JPanel mpgForm = new JPanel();
 		mpgForm.setLayout(new BoxLayout(mpgForm, BoxLayout.Y_AXIS));
 
+		//starts the miles Panel
 		JPanel miles = new JPanel();
 		miles.setLayout(new BoxLayout(miles, BoxLayout.X_AXIS));
 
 		JLabel milesLabel = new JLabel("Miles driven: ");
+		//has to be final because it is used in inner class
 		final JTextField milesInput = new JTextField(10);
 		miles.add(milesLabel);
 		miles.add(milesInput);
 
+		//starts the gallons Panel
 		JPanel gallons = new JPanel();
 		gallons.setLayout(new BoxLayout(gallons, BoxLayout.X_AXIS));
 
@@ -35,15 +39,18 @@ public class MPG {
 		gallons.add(gallonsLabel);
 		gallons.add(gallonsInput);
 
+		//adds the two panels to the outer container panel
 		mpgForm.add(miles);
 		mpgForm.add(gallons);
 
+		//panel for buttons in case more buttons are to be added
 		JPanel buttons = new JPanel();
 		buttons.setLayout(new BoxLayout(buttons, BoxLayout.X_AXIS));
 
 		JButton submit = new JButton("Submit");
 		buttons.add(submit);
 
+		//calculates the miles per gallon when submit is pressed and also does some form validation
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				if(!milesInput.getText().matches("-?\\d+(\\.\\d+)?") || !gallonsInput.getText().matches("-?\\d+(\\.\\d+)?"))
