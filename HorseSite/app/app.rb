@@ -5,6 +5,7 @@ module HorseSite
 
     enable :sessions
 
+    
     ##
     # Caching support.
     #

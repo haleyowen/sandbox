@@ -1,4 +1,4 @@
-HorseSite::App.controllers :main do
+HorseSite::App.controllers do
   
   # get :index, :map => '/foo/bar' do
   #   session[:foo] = 'bar'
@@ -19,8 +19,8 @@ HorseSite::App.controllers :main do
   #   'Hello world!'
   # end
 
-  get '/hello' do
-    'Hello, World!'
+  get '/' do
+    render 'index'
   end
 
 end
