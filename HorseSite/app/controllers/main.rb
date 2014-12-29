@@ -23,4 +23,24 @@ HorseSite::App.controllers do
     erb :index, :layout => :layout
   end
 
+  get '/buy' do
+    erb :buy, :layout => :layout
+  end
+
+  get '/sell' do
+    erb :sell, :layout => :layout
+  end
+
+  get '/prices' do 
+    erb :prices, :layout => :layout
+  end
+
+  get '/account' do
+    erb :account, :layout => :layout
+  end
+
+  get '/contact' do
+    erb :contact, :layout => :layout
+  end
+
 end
