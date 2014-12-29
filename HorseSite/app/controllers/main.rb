@@ -20,7 +20,7 @@ HorseSite::App.controllers do
   # end
 
   get '/' do
-    render 'index'
+    erb :index, :layout => :layout
   end
 
 end
