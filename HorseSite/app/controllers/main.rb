@@ -43,4 +43,7 @@ HorseSite::App.controllers do
     erb :contact, :layout => :layout
   end
 
+  post '/contact' do
+    erb 'WORK WAHHH', :layout => :layout
+  end
 end
