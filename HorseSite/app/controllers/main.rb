@@ -1,5 +1,6 @@
+require 'mailgun'
 HorseSite::App.controllers do
-  
+
   # get :index, :map => '/foo/bar' do
   #   session[:foo] = 'bar'
   #   render 'index'
@@ -43,4 +44,21 @@ HorseSite::App.controllers do
     erb :contact, :layout => :layout
   end
 
+  post '/contact' do
+    name = params['name']
+    email = params['email']
+    subject = params['subject']
+    message = params['message']
+
+    mg_client = Mailgun::Client.new "key-1jky1amz35l6alxzs3hsmup-l0ysuuy6"
+
+    message_params = {:from => 'equinemarket@sandbox2c9ea1363ec0428098d69937d3e68a3a.mailgun.org',
+                      :to => 'haley.owen21@gmail.com',
+                      :subject => subject,
+                      :text => "Name: " + name + "\nEmail Address: " + email + "\nMessage: " + message}
+
+    mg_client.send_message "sandbox2c9ea1363ec0428098d69937d3e68a3a.mailgun.org", message_params
+    
+    erb :thanks, :layout => :layout
+  end
 end
