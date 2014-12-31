@@ -24,14 +24,6 @@ HorseSite::App.controllers do
     erb :index, :layout => :layout
   end
 
-  get '/search' do
-    erb :search, :layout => :layout
-  end
-
-  get '/sell' do
-    erb :sell, :layout => :layout
-  end
-
   get '/prices' do 
     erb :prices, :layout => :layout
   end

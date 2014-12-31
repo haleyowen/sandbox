@@ -2,8 +2,8 @@
 <html>
   <head>
     <!-- Styles -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
   </head>
 
   <body>
@@ -24,8 +24,8 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a href="/">Home</a></li>
-          <li><a href="/search">Search</a></li>
-          <li><a href="/sell">Sell Horse</a></li>
+          <li><a href="/ads/search">Search</a></li>
+          <li><a href="/ads/sell">Sell Horse</a></li>
           <li><a href="/prices">Prices</a></li>
           <li><a href="/account">Account</a></li>
           <li><a href="contact">Contact</a></li>
@@ -37,7 +37,7 @@
     <%= yield %>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
     <script>
       $('#main-navbar .nav a[href="' + this.location.pathname + '"]').parent().addClass('active');
