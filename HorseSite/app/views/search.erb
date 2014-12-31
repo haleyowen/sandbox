@@ -1,0 +1,162 @@
+<div>
+
+  <div class="page-header"><h1>Search Ads</h1></div>
+
+  <form class="form-horizontal" action="/search" method="post">
+    <div class="container">
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="title">Title</label>
+        <div class="col-md-4"><input class="form-control" type="text" name="title" id="title"></div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="name">Horse Name</label>
+        <div class="col-md-4"><input class="form-control" type="text" name="name" id="name"></div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="min-price">Price</label>
+        <div class="col-md-4">
+          <div class="input-group">
+            <span class="input-group-addon">$</span>
+            <input class="form-control" type="text" name="min-price" id="min-price" placeholder="Minimum Price">
+            <span class="input-group-addon">.00</span>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="input-group">
+            <span class="input-group-addon">$</span>
+            <input class="form-control" type="text" name="max-price" id="max-price" placeholder="Maximum Price">
+            <span class="input-group-addon">.00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="breed">Breed</label>
+        <div class="col-md-4">
+          <select multiple class="form-control" name="breed" id="breed">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="disciplines">Disciplines</label>
+        <div class="col-md-4">
+          <select multiple class="form-control" name="disciplines" id="disciplines">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="attributes">Attributes</label>
+        <div class="col-md-4">
+          <select multiple class="form-control" name="attributes" id="attributes">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="gender">Gender</label>
+        <div class="col-md-4">
+          <select multiple class="form-control" name="gender" id="gender">
+            <option value="Gelding">Gelding</option>
+            <option value="Mare">Mare</option>
+            <option value="Stallion">Stallion</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="min-age">Age</label>
+        <div class="col-md-4">
+          <select class="form-control" name="min-age" id="min-age">
+            <option value="" selected disabled>Minimum Age</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <select class="form-control" name="max-age" id="max-age">
+            <option value="" selected disabled>Maximum Age</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="color">Color</label>
+        <div class="col-md-4">
+          <select multiple class="form-control" name="color" id="color">
+            <option>Color1</option>
+            <option>Color2</option>
+            <option>Color3</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="min-temp">Temperament</label>
+        <div class="col-md-4">
+          <select class="form-control" name="min-temp" id="min-temp">
+            <option value="" selected disabled>Minimum Temperament</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <select class="form-control" name="max-temp" id="max-temp">
+            <option value="" selected disabled>Maximum Temperament</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="state">State</label>
+        <div class="col-md-4">
+          <select class="form-control" name="state" id="state">
+            <option>State1</option>
+            <option>State2</option>
+            <option>State3</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="distance">Distance from Zip Code</label>
+        <div class="col-md-4">
+          <select class="form-control" name="distance" id="distance">
+            <option value="" selected disabled>Miles</option>
+            <option>Distance1</option>
+            <option>Distance2</option>
+            <option>Distance3</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <input class="form-control" type="text" name="zip" id="zip" placeholder="Zip Code">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-default">Search</button>
+    </div>
+  </form>
+</div>
