@@ -40,3 +40,6 @@ gem 'padrino', '0.12.4'
 
 #Mailgun Gem
 gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
+
+#Using for input validation on forms
+gem 'sinatra-formkeeper'
