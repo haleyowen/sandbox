@@ -1,5 +1,6 @@
+require 'sinatra/formkeeper'
 HorseSite::App.controllers :ads do
-  
+  register Sinatra::FormKeeper 
   # get :index, :map => '/foo/bar' do
   #   session[:foo] = 'bar'
   #   render 'index'
@@ -27,4 +28,23 @@ HorseSite::App.controllers :ads do
     erb :sell, :layout => :layout
   end
 
+  post '/sell' do 
+    form do
+      field :title, :present => true
+      field :price, :present => true, :int => true
+      field :description, :present => true
+      field :gender, :present => true
+      field :age, :present => true
+      field :temp, :present => true
+      field :state, :present => true
+      field :zip, :present => true, :length => 5
+      field :email, :present => true
+    end
+
+    if form.failed?
+      erb 'form failed'
+    else
+      erb 'form passed' 
+    end
+  end
 end
