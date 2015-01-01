@@ -4,11 +4,19 @@
 
   <form class="form-horizontal" action="/ads/sell" method="post">
     <div class="container">
-      <div class="form-group required">
-        <label class="col-md-2 control-label" for="title">Title</label>
-        <div class="col-md-4"><input class="form-control" type="text" name="title" id="title"></div>
-        <div class="col-md-6"><p class="form-control-static">2010 AQHA Cutting Mare</p></div>
-      </div>
+        <% if form.failed? %>
+          <div class="form-group required has-error">
+            <label class="col-md-2 control-label" for="title">Title</label>
+            <div class="col-md-4"><input type="text" class="form-control" name="title" id="title" placeholder="<%= form.messages(:title, :present) %>"></div>
+            <div class="col-md-6"><p class="form-control-static">2010 AQHA Cutting Mare</p></div>
+          </div>
+        <% else %>
+          <div class="form-group required">
+            <label class="col-md-2 control-label" for="title">Title</label>
+            <div class="col-md-4"><input class="form-control" type="text" name="title" id="title"></div>
+            <div class="col-md-6"><p class="form-control-static">2010 AQHA Cutting Mare</p></div>
+          </div>
+        <% end %>
 
       <div class="form-group">
         <label class="col-md-2 control-label" for="name">Horse Name</label>

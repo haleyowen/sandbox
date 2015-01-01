@@ -28,6 +28,7 @@ HorseSite::App.controllers :ads do
     erb :sell, :layout => :layout
   end
 
+  form_messages File.expand_path(File.join( File.dirname('sell.erb'),'config', 'errors.yaml'))
   post '/sell' do 
     form do
       field :title, :present => true
@@ -38,11 +39,12 @@ HorseSite::App.controllers :ads do
       field :temp, :present => true
       field :state, :present => true
       field :zip, :present => true, :length => 5
-      field :email, :present => true
+      field :email, :present => true, :email => true
     end
 
     if form.failed?
-      erb 'form failed'
+      output = erb :sell, :layout => :layout
+      fill_in_form(output)
     else
       erb 'form passed' 
     end
