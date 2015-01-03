@@ -28,9 +28,9 @@ HorseSite::App.controllers :ads do
     erb :sell, :layout => :layout
   end
 
-  form_messages File.expand_path(File.join( File.dirname('sell.erb'),'config', 'errors.yaml'))
-  post '/sell' do 
+  post '/sell' do
     form do
+      filters :strip
       field :title, :present => true
       field :price, :present => true, :int => true
       field :description, :present => true
@@ -43,6 +43,7 @@ HorseSite::App.controllers :ads do
     end
 
     if form.failed?
+      puts form.messages(:title)
       output = erb :sell, :layout => :layout
       fill_in_form(output)
     else
