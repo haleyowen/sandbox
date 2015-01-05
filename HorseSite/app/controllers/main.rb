@@ -1,4 +1,8 @@
 require 'mailgun'
+require 'sinatra'
+require 'sinatra/activerecord'
+require './environments'
+
 HorseSite::App.controllers do
 
   # get :index, :map => '/foo/bar' do
@@ -45,12 +49,24 @@ HorseSite::App.controllers do
     mg_client = Mailgun::Client.new "key-1jky1amz35l6alxzs3hsmup-l0ysuuy6"
 
     message_params = {:from => 'equinemarket@sandbox2c9ea1363ec0428098d69937d3e68a3a.mailgun.org',
-                      :to => 'haley.owen21@gmail.com',
-                      :subject => subject,
-                      :text => "Name: " + name + "\nEmail Address: " + email + "\nMessage: " + message}
+      :to => 'haley.owen21@gmail.com',
+      :subject => subject,
+      :text => "Name: " + name + "\nEmail Address: " + email + "\nMessage: " + message}
 
     mg_client.send_message "sandbox2c9ea1363ec0428098d69937d3e68a3a.mailgun.org", message_params
-    
+
     erb :thanks, :layout => :layout
+  end
+
+  get '/register' do
+    erb :register, :layout => :layout
+  end
+
+  post '/register' do
+    email = params['email']
+    password = params['password']
+
+    User.create(email: email, password: password)
+    erb :account, :layout => :layout
   end
 end
