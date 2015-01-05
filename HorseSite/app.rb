@@ -4,5 +4,5 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './environments'
 
-class Post < ActiveRecord::Base
+class User < ActiveRecord::Base
 end
