@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/jondot/padrino-warden.git
+  revision: a29bdeb36be1c47558d484af46e86bcbc8feb929
+  specs:
+    padrino-warden (0.20.0)
+      warden (>= 0.10.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -163,6 +170,8 @@ GEM
     url_mount (0.2.1)
       rack
     uuidtools (2.1.5)
+    warden (1.2.3)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
@@ -180,6 +189,7 @@ DEPENDENCIES
   dm-validations
   mailgun-ruby (~> 1.0.3)
   padrino (= 0.12.4)
+  padrino-warden!
   pg
   rake
   sinatra

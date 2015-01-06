@@ -2,6 +2,7 @@ module HorseSite
   class App < Padrino::Application
     register Padrino::Mailer
     register Padrino::Helpers
+    register Padrino::Warden
 
     enable :sessions
 

@@ -61,3 +61,6 @@ end
 group :production do
   gem 'pg'
 end
+
+#Padrino warden
+gem 'padrino-warden', :github => 'jondot/padrino-warden'
