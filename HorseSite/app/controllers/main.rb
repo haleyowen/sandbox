@@ -1,8 +1,4 @@
 require 'mailgun'
-require 'sinatra'
-require 'sinatra/activerecord'
-require './environments'
-
 HorseSite::App.controllers do
 
   # get :index, :map => '/foo/bar' do
@@ -66,7 +62,11 @@ HorseSite::App.controllers do
     email = params['email']
     password = params['password']
 
-    User.create(email: email, password: password)
-    erb :account, :layout => :layout
+    @user = User.new(email: email, password: password);
+    if @user.save
+      erb :account, :layout => :layout
+    else
+      "Oh no!"
+    end
   end
 end
