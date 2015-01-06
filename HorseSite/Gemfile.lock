@@ -8,13 +8,6 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (4.2.0)
-      activesupport (= 4.2.0)
-      builder (~> 3.1)
-    activerecord (4.2.0)
-      activemodel (= 4.2.0)
-      activesupport (= 4.2.0)
-      arel (~> 6.0)
     activesupport (4.2.0)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
@@ -22,12 +15,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.3.6)
-    arel (6.0.0)
     bcrypt (3.1.9)
     bcrypt-ruby (3.1.5)
       bcrypt (>= 3.1.3)
-    bond (0.5.1)
-    builder (3.2.2)
     data_objects (0.10.14)
       addressable (~> 2.1)
     dm-aggregates (1.2.0)
@@ -113,45 +103,26 @@ GEM
       padrino-core (= 0.12.4)
     padrino-support (0.12.4)
       activesupport (>= 3.1)
-    pg (0.18.0)
     polyglot (0.3.5)
     rack (1.6.0)
     rack-protection (1.5.3)
       rack
-    rack-test (0.6.2)
-      rack (>= 1.0)
     rake (10.4.2)
     rest-client (1.7.2)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
-    ripl (0.7.1)
-      bond (~> 0.5.1)
-    ripl-multi_line (0.3.1)
-      ripl (>= 0.3.6)
-    ripl-rack (0.2.1)
-      rack (>= 1.0)
-      rack-test (~> 0.6.2)
-      ripl (>= 0.7.0)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
-    sinatra-activerecord (2.0.3)
-      activerecord (>= 3.2)
-      sinatra (~> 1.0)
-    sinatra-flash (0.3.0)
-      sinatra (>= 1.0.0)
     sinatra-formkeeper (0.0.7)
       formkeeper (~> 0.0.12)
       hpricot
       rack
       sinatra
-    sinatra-redirect-with-flash (0.2.1)
-      sinatra (>= 1.0.0)
     slim (3.0.1)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
-    sqlite3 (1.3.10)
     stringex (1.5.1)
     temple (0.7.4)
     thor (0.19.1)
@@ -160,11 +131,6 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tux (0.3.0)
-      ripl (>= 0.3.5)
-      ripl-multi_line (>= 0.2.4)
-      ripl-rack (>= 0.2.0)
-      sinatra (>= 1.2.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     url_mount (0.2.1)
@@ -177,7 +143,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord
   bcrypt
   dm-aggregates
   dm-constraints
@@ -190,13 +155,6 @@ DEPENDENCIES
   mailgun-ruby (~> 1.0.3)
   padrino (= 0.12.4)
   padrino-warden!
-  pg
   rake
-  sinatra
-  sinatra-activerecord
-  sinatra-flash
   sinatra-formkeeper
-  sinatra-redirect-with-flash
   slim
-  sqlite3
-  tux

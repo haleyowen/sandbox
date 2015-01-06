@@ -44,23 +44,5 @@ gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
 #Using for input validation on forms
 gem 'sinatra-formkeeper'
 
-#Sinatra gems
-gem "sinatra"
-gem "activerecord"
-gem "sinatra-activerecord"
-gem 'sinatra-flash'
-gem 'sinatra-redirect-with-flash'
-
-#using sqlite for development
-group :development do
-  gem 'sqlite3'
-  gem "tux"
-end
-
-#using postgres for production
-group :production do
-  gem 'pg'
-end
-
 #Padrino warden
 gem 'padrino-warden', :github => 'jondot/padrino-warden'
