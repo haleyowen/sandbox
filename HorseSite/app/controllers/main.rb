@@ -69,4 +69,5 @@ HorseSite::App.controllers do
       "Oh no!"
     end
   end
+
 end
