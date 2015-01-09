@@ -1,13 +1,14 @@
+require 'dm-sqlite-adapter'
 class User
   include DataMapper::Resource
 
-  # property <name>, <type>
-  property :id, Serial
-  property :email, String
-  property :password, String
+  attr_accessor :password, :password_confirmation
 
-  def self.authenticate(email, password)
-    account = first(:conditions => ["lower(email) = lower(?)", email]) if email.present?
-    account && account.has_password?(password) ? account : nil
-  end
+  # property <name>, <type>
+  property :id, Serial, :writer => :protected, :key => true
+  property :email, String, :required => true, :length => (5..40), :unique => true, :format => :email_address
+  property :password, BCryptHash
+
 end
+    
+DataMapper.auto_migrate!

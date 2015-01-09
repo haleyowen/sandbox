@@ -64,9 +64,10 @@ HorseSite::App.controllers do
 
     @user = User.new(email: email, password: password);
     if @user.save
-      erb :account, :layout => :layout
+      session[:user] = @user.id
+      redirect :index, :layout => :layout
     else
-      "Oh no!"
+      erb "oh, no!"
     end
   end
 
