@@ -65,7 +65,7 @@ HorseSite::App.controllers do
     @user = User.new(email: email, password: password);
     if @user.save
       session[:user] = @user.id
-      redirect :index, :layout => :layout
+      redirect '/'
     else
       erb "oh, no!"
     end

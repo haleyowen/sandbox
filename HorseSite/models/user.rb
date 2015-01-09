@@ -7,7 +7,7 @@ class User
   # property <name>, <type>
   property :id, Serial, :writer => :protected, :key => true
   property :email, String, :required => true, :length => (5..40), :unique => true, :format => :email_address
-  property :password, BCryptHash
+  property :password, String
 
 end
     
