@@ -6,6 +6,9 @@ module HorseSite
 
     enable :sessions
 
+    before do
+      @cur_user = session[:user]
+    end
     
     ##
     # Caching support.

@@ -71,4 +71,24 @@ HorseSite::App.controllers do
     end
   end
 
+  get '/login' do
+    erb :login, :layout => :layout
+  end
+
+  post '/login' do
+    @user = User.first(:email => params['email'])
+    @user_hash = BCrypt::Password.new(@user.password)
+    if @user_hash == params['password'] then
+      session[:user] = @user.id
+      erb @user.email
+    else
+      erb "NO"
+    end
+  end
+
+  get '/logout' do
+    session[:user] = nil
+    redirect '/'
+  end
+
 end
