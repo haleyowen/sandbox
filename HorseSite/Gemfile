@@ -46,3 +46,6 @@ gem 'sinatra-formkeeper'
 
 #Padrino warden
 gem 'padrino-warden', :github => 'jondot/padrino-warden'
+
+#sinatra flash, for sending messages
+gem 'sinatra-flash'

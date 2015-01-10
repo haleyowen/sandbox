@@ -43,7 +43,6 @@ HorseSite::App.controllers :ads do
     end
 
     if form.failed?
-      puts form.messages(:title)
       output = erb :sell, :layout => :layout
       fill_in_form(output)
     else

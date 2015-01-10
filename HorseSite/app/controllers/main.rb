@@ -1,4 +1,6 @@
 require 'mailgun'
+require 'sinatra/flash'
+
 HorseSite::App.controllers do
 
   # get :index, :map => '/foo/bar' do
@@ -80,9 +82,10 @@ HorseSite::App.controllers do
     @user_hash = BCrypt::Password.new(@user.password)
     if @user_hash == params['password'] then
       session[:user] = @user.id
-      erb @user.email
+      redirect '/'
     else
-      erb "NO"
+      output = erb :login, :layout => :layout, :locals => {:message => "Your email or password was incorrect"}
+      fill_in_form(output)
     end
   end
 
