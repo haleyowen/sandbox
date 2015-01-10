@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 public class Reverse {
   public static void main(String [] args) {
     Scanner input = new Scanner(System.in);
@@ -6,17 +7,27 @@ public class Reverse {
 
     for(int x = 0; x < times; x++) {
       int n = input.nextInt();
-      int index = input.nextInt();
-
-      String res = "";
+      int k = input.nextInt();
+      
+      int[] nums = new int[n];
       for(int i = 0; i < n; i++) {
-        for(int j = n - 1; j >= n - i - 1; j--) {
-          num = j - i;
-        }
-        res += i;
-        System.out.println(res);
+        nums[i] = i;
       }
-      System.out.println(res.indexOf(index - 1));
+
+      for(int i = 0; i < n; i++) {
+        for(int j = i; j < n; j++) {
+          if(i % 2 == 0) {
+            nums[j] = n - nums[j] - 1;
+          }
+          else {
+            nums[j] = n - nums[j] - 2;
+          }
+        }
+      }
+      for(int i = 0; i < n; i++) {
+        if(nums[i] == k) 
+          System.out.println(i);
+      }
     }
   }
 }
