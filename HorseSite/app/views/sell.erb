@@ -4,7 +4,7 @@
 
   <form class="form-horizontal" action="/ads/sell" method="post">
     <div class="container">
-      <% if form.failed? %>
+      <% if form.failed_on?(:title) %>
         <div class="form-group required has-error">
           <label class="col-md-2 control-label" for="title">Title</label>
           <div class="col-md-4"><input type="text" class="form-control" name="title" id="title" placeholder="Enter a title."></div>
@@ -23,7 +23,7 @@
         <div class="col-md-4"><input class="form-control" type="text" name="name" id="name"></div>
       </div>
 
-      <% if form.failed? %>
+      <% if form.failed_on?(:price) %>
         <div class="form-group required has-error">
           <label class="col-md-2 control-label" for="price">Price</label>
           <div class="col-md-4">
@@ -58,7 +58,7 @@
         </div>
       </div>
 
-      <% if form.failed? %>
+      <% if form.failed_on?(:description) %>
         <div class="form-group required has-error">
           <label class="col-md-2 control-label" for="description">Description</label>
           <div class="col-md-4">
@@ -132,7 +132,7 @@
         </div>
       </div>
 
-      <% if form.failed? %>
+      <% if form.failed_on?(:gender) %>
         <div class="form-group required has-error">
         <% else %>
           <div class="form-group required">
@@ -147,7 +147,7 @@
           </div>
         </div>
 
-        <% if form.failed? %>
+        <% if form.failed_on?(:age) %>
           <div class="form-group required has-error">
           <% else %>
             <div class="form-group required">
@@ -174,7 +174,7 @@
             </div>
           </div>
 
-          <% if form.failed? %>
+          <% if form.failed_on?(:temp) %>
             <div class="form-group required has-error">
             <% else %>
               <div class="form-group required">
@@ -193,7 +193,7 @@
 
             <h2>Location</h2>
 
-            <% if form.failed? %>
+            <% if form.failed_on?(:state) %>
               <div class="form-group required has-error">
               <% else %>
                 <div class="form-group required">
@@ -208,7 +208,7 @@
                 </div>
               </div>
 
-              <% if form.failed? %>
+              <% if form.failed_on?(:zip) %>
                 <div class="form-group required has-error">
                   <label class="col-md-2 control-label" for="zip">Zip Code</label>
                   <div class="col-md-4">
@@ -226,7 +226,7 @@
 
               <h2>Contact Information</h2>
 
-              <% if form.failed? %>
+              <% if form.failed_on?(:email) %>
                 <div class="form-group required has-error">
                   <label class="col-md-2 control-label" for="email">Email</label>
                   <div class="col-md-4"><input class="form-control" placeholder="Enter a valid email address." type="text" name="email" id="email"></div>

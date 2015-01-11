@@ -1,4 +1,5 @@
 require 'sinatra/formkeeper'
+
 HorseSite::App.controllers :ads do
   register Sinatra::FormKeeper 
   # get :index, :map => '/foo/bar' do

@@ -3,7 +3,7 @@
 
   <form class="form-horizontal" action="/login" method="post">
     <div class="container">
-      <% if not :message.nil? %>
+      <% if not message.nil? %>
         <div class="alert alert-danger" role="alert">
           <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
           <span class="sr-only">Error:</span>
@@ -16,7 +16,7 @@
       </div>
       <div class="form-group">
         <label class="col-md-2 control-label" for="password">Password</label>
-        <div class="col-md-4"><input class="form-control" type="text" name="password" id="password"></div>
+        <div class="col-md-4"><input class="form-control" type="password" name="password" id="password"></div>
       </div>
       <button type="submit" class="btn btn-default">Login</button>
     </div>

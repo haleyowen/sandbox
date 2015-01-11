@@ -1,8 +1,9 @@
 require 'mailgun'
 require 'sinatra/flash'
+require 'sinatra/formkeeper'
 
 HorseSite::App.controllers do
-
+  register Sinatra::FormKeeper 
   # get :index, :map => '/foo/bar' do
   #   session[:foo] = 'bar'
   #   render 'index'
@@ -64,28 +65,46 @@ HorseSite::App.controllers do
     email = params['email']
     password = params['password']
 
-    @user = User.new(email: email, password: password);
-    if @user.save
-      session[:user] = @user.id
-      redirect '/'
+    form do
+      filters :strip
+      field :email, :present => true
+      field :password, :present => true
+      field :password_confirm, :present => true
+      same :same_password, [:password, :password_confirm]
+    end
+
+    if form.failed?
+      output = erb :register, :layout => :layout
+      fill_in_form(output)
     else
-      erb "oh, no!"
+      @user = User.new(email: email, password: password);
+      if @user.save
+        session[:user] = @user.id
+        redirect '/'
+      else
+        erb "oh, no!"
+      end
     end
   end
 
   get '/login' do
-    erb :login, :layout => :layout
+    erb :login, :layout => :layout, :locals => {:message => nil}
   end
 
   post '/login' do
     @user = User.first(:email => params['email'])
-    @user_hash = BCrypt::Password.new(@user.password)
-    if @user_hash == params['password'] then
-      session[:user] = @user.id
-      redirect '/'
-    else
-      output = erb :login, :layout => :layout, :locals => {:message => "Your email or password was incorrect"}
+    if @user.nil? then
+      output = erb :login, :layout => :layout, :locals => {:message => "Your email or password was incorrect."}
       fill_in_form(output)
+    else
+      @user_hash = BCrypt::Password.new(@user.password)
+      if @user_hash == params['password'] then
+        session[:user] = @user.id
+        redirect '/'
+      else
+        output = erb :login, :layout => :layout, :locals => {:message => "Your email or password was incorrect."}
+        fill_in_form(output)
+      end
     end
   end
 
