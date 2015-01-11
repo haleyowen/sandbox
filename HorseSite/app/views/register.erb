@@ -35,8 +35,8 @@
           <% if form.failed_on?(:password_confirm) %>
             <div class="col-md-4"><input type="password" class="form-control" name="password_confirm" id="password_confirm" placeholder="Confirm your password."></div>
           <% end %>
-          <% if form.failed_on?(:password_safe) %>
-            <div class="col-md-4"><input type="password" class="form-control" name="password_confirm" id="password_confirm" placeholder="Your password did not match."></div
+          <% if form.failed_on?(:same_password) %>
+            <div class="col-md-4"><input type="password" class="form-control" name="password_confirm" id="password_confirm" placeholder="Your password did not match."></div>
           <% end %>
         </div>
       <% else %>
