@@ -47,7 +47,26 @@ HorseSite::App.controllers :ads do
       output = erb :sell, :layout => :layout
       fill_in_form(output)
     else
-      erb 'form passed' 
+      @ad = Ad.new(title: params['title'],
+                   name: params['name'],
+                   price: params['price'],
+                   description: params['description'],
+                   gender: params['gender'],
+                   age: params['age'],
+                   color: params['color'],
+                   temp: params['temp'],
+                   city: params['city'],
+                   state: params['state'],
+                   zip: params['zip'],
+                   phone: params['phone'],
+                   email: params['email'],
+                   address: params['address'])
+      
+      if @ad.save
+        erb "YES"
+      else
+        @ad.title
+      end
     end
   end
 end

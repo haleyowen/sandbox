@@ -47,17 +47,6 @@
         </div>
       <% end %>
 
-      <div class="form-group required">
-        <label class="col-md-2 control-label" for="price">Price</label>
-        <div class="col-md-4">
-          <div class="input-group">
-            <span class="input-group-addon">$</span>
-            <input class="form-control" type="text" name="price" id="price">
-            <span class="input-group-addon">.00</span>
-          </div>
-        </div>
-      </div>
-
       <% if form.failed_on?(:description) %>
         <div class="form-group required has-error">
           <label class="col-md-2 control-label" for="description">Description</label>
@@ -86,9 +75,9 @@
         <label class="col-md-2 control-label" for="primary-breed">Primary Breed</label>
         <div class="col-md-4">
           <select class="form-control" name="primary-breed" id="primary-breed">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
           </select>
         </div>
       </div>
@@ -97,9 +86,9 @@
         <label class="col-md-2 control-label" for="secondary-breed">Secondary Breed</label>
         <div class="col-md-4">
           <select class="form-control" name="secondary-breed" id="secondary-breed">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
           </select>
         </div>
       </div>
@@ -108,9 +97,9 @@
         <label class="col-md-2 control-label" for="disciplines">Disciplines</label>
         <div class="col-md-4">
           <select multiple class="form-control" name="disciplines" id="disciplines">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
           </select>
         </div>
         <div class="col-md-6">
@@ -122,9 +111,9 @@
         <label class="col-md-2 control-label" for="attributes">Attributes</label>
         <div class="col-md-4">
           <select multiple class="form-control" name="attributes" id="attributes">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
           </select>
         </div>
         <div class="col-md-6">
@@ -156,9 +145,9 @@
             <div class="col-md-4">
               <select class="form-control" name="age" id="age">
                 <option value="" selected disabled>Age</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
               </select>
             </div>
           </div>
@@ -167,9 +156,9 @@
             <label class="col-md-2 control-label" for="color">Color</label>
             <div class="col-md-4">
               <select class="form-control" name="color" id="color">
-                <option>Color1</option>
-                <option>Color2</option>
-                <option>Color3</option>
+                <option value="color1">Color1</option>
+                <option value="color2">Color2</option>
+                <option value="color3">Color3</option>
               </select>
             </div>
           </div>
@@ -182,9 +171,9 @@
               <label class="col-md-2 control-label" for="temp">Temperament</label>
               <div class="col-md-4">
                 <select class="form-control" name="temp" id="temp">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
                 </select>
               </div>
               <div class="col-md-2"><p class="form-control-static">1 - Very Calm</p></div>
@@ -201,9 +190,9 @@
                 <label class="col-md-2 control-label" for="state">State</label>
                 <div class="col-md-4">
                   <select multiplie class="form-control" name="state" id="state">
-                    <option>State1</option>
-                    <option>State2</option>
-                    <option>State3</option>
+                    <option value="state1">State1</option>
+                    <option value="state2">State2</option>
+                    <option value="state3">State3</option>
                   </select>
                 </div>
               </div>
