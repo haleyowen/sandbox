@@ -70,4 +70,10 @@ HorseSite::App.controllers :ads do
       end
     end
   end
+
+  get '/adslist' do
+    @ads = Ad.all
+    erb :adslist, :layout => :layout
+  end
+
 end

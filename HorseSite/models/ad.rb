@@ -8,7 +8,7 @@ class Ad
   property :title, String
   property :name, String
   property :price, Integer
-  property :description, Text
+  property :description, String
   property :gender, String
   property :age, Integer
   property :color, Integer
@@ -18,7 +18,7 @@ class Ad
   property :zip, String
   property :phone, String
   property :email, String
-  property :address, Text
+  property :address, String
   
 end
 
