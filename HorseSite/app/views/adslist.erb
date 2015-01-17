@@ -3,8 +3,8 @@
   <div class="page-header"><h1>Viewing Ads</h1></div>
 
   <ul>
-    <%= @ads.each do |ad| %>
-      <li><%= ad.title %></li>
+    <% @ads.each do |ad| %>
+      <%= erb :row, :locals => {:ad => ad} %>
     <% end %>
   </ul>
 </div>
