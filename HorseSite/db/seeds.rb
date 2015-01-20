@@ -371,4 +371,60 @@ BREED_NAMES = [
     'Supreme Champion',
     'Versatility Champion']
 
-ATTRIBUTE_NAMES.each { |attribute| Attribute.create(name: attribute) } 
+    ATTRIBUTE_NAMES.each { |attribute| Attribute.create(name: attribute) } 
+
+    Discipline.all.destroy
+
+    DISCIPLINE_NAMES = [
+      'All Around',
+      'Barrel Racing',
+      'Beginner/Family',
+      'Breeding',
+      'Brood Mare',
+      'Calf Roping',
+      'Companion',
+      'Competitive Trail Competitions',
+      'Country Pleasure',
+      'Cowboy Mounted Shooting',
+      'Cutting',
+      'Draft',
+      'Dressage',
+      'Drill Team',
+      'Driving',
+      'Endurance Riding',
+      'English Pleasure',
+      'Equitation',
+      'Eventing',
+      'Field Hunter',
+      'Gaited',
+      'Halter',
+      'Harness',
+      'Horsemanship',
+      'Hunter',
+      'Hunter Under Saddle',
+      'Judged Pleasure Rides',
+      'Jumper',
+      'Lesson Horse',
+      'Longe-Line',
+      'Pleasure Driving',
+      'Pole Bending',
+      'Polo',
+      'Racing',
+      'Ranch Horse',
+      'Reined Cow Horse',
+      'Reining',
+      'Showmanship',
+      'Sidesaddle',
+      'Steer Wrestling',
+      'Team Penning',
+      'Team Roping',
+      'Team Sorting',
+      'Trail Horse',
+      'Vaulting',
+      'Western Pleasure',
+      'Western Pleasure (Show)',
+      'Western Riding',
+      'Working Cow Horse',
+      'Youth/4-H Horse']
+
+    DISCIPLINE_NAMES.each { |discipline| Discipline.create(name: discipline) } 

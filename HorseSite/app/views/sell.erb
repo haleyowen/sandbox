@@ -97,9 +97,9 @@
         <label class="col-md-2 control-label" for="disciplines">Disciplines</label>
         <div class="col-md-4">
           <select multiple class="form-control" name="disciplines" id="disciplines">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
+            <% Discipline.all.each do |discipline| %>
+              <option value="<%= discipline.id %>"><%= discipline.name %></option>
+            <% end %>
           </select>
         </div>
         <div class="col-md-6">
