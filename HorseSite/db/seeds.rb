@@ -27,6 +27,8 @@ end
 
 shell.say ""
 
+Breed.all.destroy
+
 BREED_NAMES = [
   'Abyssinian',
   'Akhal Teke',
@@ -301,4 +303,72 @@ BREED_NAMES = [
   'Zhemaichu',
   'Zorse']
 
-BREED_NAMES.each { |breed| Breed.create(name: breed) }  
+  BREED_NAMES.each { |breed| Breed.create(name: breed) }  
+
+  Attribute.all.destroy
+
+  ATTRIBUTE_NAMES = [
+    'All-Around Champion',
+    'All-Around Reserve Champion',
+    'APHA Breeders Trust',
+    'Breed Assn Futurity Winner',
+    'Breed Assn National Champion',
+    'Breed Assn Point Earner',
+    'Breed Assn Reserve National Champion',
+    'Breed Assn Reserve Show Champion',
+    'Breed Assn Reserve World Champion',
+    'Breed Assn Show Champion',
+    'Breed Assn Top 10 National',
+    'Breed Assn Top 10 World',
+    'Breed Assn World Champion',
+    'Breeders Sweepstakes Enrolled Sire',
+    'Breeders Sweepstakes Nominated',
+    'Breeders Sweepstakes Nominated Sire',
+    'Foundation Eligible',
+    'Foundation Registered',
+    'Futurity Eligible',
+    'Futurity Money Earner',
+    'Homozygous',
+    'HYPP H/H',
+    'HYPP N/H',
+    'HYPP N/N',
+    'Incentive Fund Eligible',
+    'Incentive Fund Enrolled',
+    'Jackpot Money Earner',
+    'KY Incentive Fund',
+    'Mare in Foal',
+    'Money Earner',
+    'NCHA Money Earner',
+    'NCHR Breeders Classic',
+    'NCHR Stallion Stakes',
+    'NCHR Super Stakes',
+    'NRHA Derby Champion',
+    'NRHA Futurity Champion',
+    'NRHA Money Earner',
+    'NRHA Nomination Program',
+    'NRHA Open Champion',
+    'NRHA Sire & Dam Offspring',
+    'NRHA Sire & Dam Sire',
+    'NRHA World Champion',
+    'Open Show Winner',
+    'Performance Winner',
+    'Race Money Earner',
+    'Register of Merit',
+    'Rodeo Winner',
+    'SHN Payback Enrolled',
+    'Sire & Dam Program',
+    'Sire/Dam of Breed Assn Futurity Winner',
+    'Sire/Dam of Breed Assn National Champion',
+    'Sire/Dam of Breed Assn Point Earner',
+    'Sire/Dam of Breed Assn Reserve National Champion',
+    'Sire/Dam of Breed Assn Reserve Show Champion',
+    'Sire/Dam of Breed Assn Reserve World Champion',
+    'Sire/Dam of Breed Assn Show Champion',
+    'Sire/Dam of Breed Assn Top 10 National',
+    'Sire/Dam of Breed Assn Top 10 World',
+    'Sire/Dam of Breed Assn World Champion',
+    'Sire/Dam of Register of Merit',
+    'Supreme Champion',
+    'Versatility Champion']
+
+ATTRIBUTE_NAMES.each { |attribute| Attribute.create(name: attribute) } 
