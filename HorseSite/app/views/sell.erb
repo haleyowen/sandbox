@@ -156,9 +156,9 @@
             <label class="col-md-2 control-label" for="color">Color</label>
             <div class="col-md-4">
               <select class="form-control" name="color" id="color">
-                <option value="color1">Color1</option>
-                <option value="color2">Color2</option>
-                <option value="color3">Color3</option>
+                <% Color.all.each do |color| %>
+                  <option value="<%= color.id %>"><%= color.name %></option>
+                <% end %>
               </select>
             </div>
           </div>

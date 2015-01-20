@@ -427,4 +427,28 @@ BREED_NAMES = [
       'Working Cow Horse',
       'Youth/4-H Horse']
 
-    DISCIPLINE_NAMES.each { |discipline| Discipline.create(name: discipline) } 
+      DISCIPLINE_NAMES.each { |discipline| Discipline.create(name: discipline) } 
+
+      Color.all.destroy
+
+      COLOR_NAMES = [
+        'Bay',
+        'Black',
+        'Brown',
+        'Buckskin',
+        'Champagne',
+        'Chestnut',
+        'Cremello',
+        'Dun',
+        'Grey',
+        'Grulla',
+        'Palomino',
+        'Pearl',
+        'Perlino',
+        'Pinto',
+        'Roan',
+        'Silver Dapple',
+        'Sorrel',
+        'White']
+
+      COLOR_NAMES.each { |color| Color.create(name: color) }
