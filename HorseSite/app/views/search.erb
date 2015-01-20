@@ -69,7 +69,7 @@
       <div class="form-group">
         <label class="col-md-2 control-label" for="gender">Gender</label>
         <div class="col-md-4">
-          <select multiple class="form-control" name="gender" id="gender">
+          <select multiple size="3" class="form-control" name="gender" id="gender">
             <option value="Gelding">Gelding</option>
             <option value="Mare">Mare</option>
             <option value="Stallion">Stallion</option>
@@ -82,18 +82,18 @@
         <div class="col-md-4">
           <select class="form-control" name="min-age" id="min-age">
             <option value="" selected disabled>Minimum Age</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+            <% (0..35).to_a.each do |n| %>
+              <option value="<%= n %>"><%= n %></option>
+            <% end %>
           </select>
         </div>
 
         <div class="col-md-4">
           <select class="form-control" name="max-age" id="max-age">
             <option value="" selected disabled>Maximum Age</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+            <% (0..35).to_a.each do |n| %>
+              <option value="<%= n %>"><%= n %></option>
+            <% end %>
           </select>
         </div>
       </div>
@@ -114,18 +114,18 @@
         <div class="col-md-4">
           <select class="form-control" name="min-temp" id="min-temp">
             <option value="" selected disabled>Minimum Temperament</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+            <% (1..10).to_a.each do |n| %>
+              <option value="<%= n %>"><%= n %></option>
+            <% end %>
           </select>
         </div>
 
         <div class="col-md-4">
           <select class="form-control" name="max-temp" id="max-temp">
             <option value="" selected disabled>Maximum Temperament</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+            <% (1..10).to_a.each do |n| %>
+              <option value="<%= n %>"><%= n %></option>
+            <% end %>
           </select>
         </div>
       </div>

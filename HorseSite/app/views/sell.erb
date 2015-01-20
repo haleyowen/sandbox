@@ -144,10 +144,9 @@
             <label class="col-md-2 control-label" for="age">Age</label>
             <div class="col-md-4">
               <select class="form-control" name="age" id="age">
-                <option value="" selected disabled>Age</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+                <% (0..35).to_a.each do |n| %>
+                  <option value="<%= n %>"><%= n %></option>
+                <% end %>
               </select>
             </div>
           </div>
@@ -171,9 +170,9 @@
               <label class="col-md-2 control-label" for="temp">Temperament</label>
               <div class="col-md-4">
                 <select class="form-control" name="temp" id="temp">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
+                  <% (1..10).to_a.each do |n| %>
+                    <option value="<%= n %>"><%= n %></option>
+                  <% end %>
                 </select>
               </div>
               <div class="col-md-2"><p class="form-control-static">1 - Very Calm</p></div>
