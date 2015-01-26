@@ -37,6 +37,7 @@
         <label class="col-md-2 control-label" for="breed">Breed</label>
         <div class="col-md-4">
           <select multiple class="form-control" name="breed" id="breed">
+            <option value="">-- Select All Breeds --</option>
             <% Breed.all.each do |breed| %>
               <option value="<%= breed.id %>"><%= breed.name %></option>
             <% end %>
@@ -48,6 +49,7 @@
         <label class="col-md-2 control-label" for="disciplines">Disciplines</label>
         <div class="col-md-4">
           <select multiple class="form-control" name="disciplines" id="disciplines">
+            <option value="">-- Select All Disciplines --</option>
             <% Discipline.all.each do |discipline| %>
               <option value="<%= discipline.id %>"><%= discipline.name %></option>
             <% end %>
@@ -59,6 +61,7 @@
         <label class="col-md-2 control-label" for="attributes">Attributes</label>
         <div class="col-md-4">
           <select multiple class="form-control" name="attributes" id="attributes">
+            <option value="">-- Select All Attributes --</option>
             <% Attribute.all.each do |attribute| %>
               <option value="<%= attribute.id %>"><%= attribute.name %></option>
             <% end %>
@@ -70,6 +73,7 @@
         <label class="col-md-2 control-label" for="gender">Gender</label>
         <div class="col-md-4">
           <select multiple size="3" class="form-control" name="gender" id="gender">
+            <option value="">-- Select Any Gender --</option>
             <option value="Gelding">Gelding</option>
             <option value="Mare">Mare</option>
             <option value="Stallion">Stallion</option>
@@ -81,7 +85,7 @@
         <label class="col-md-2 control-label" for="min-age">Age</label>
         <div class="col-md-4">
           <select class="form-control" name="min-age" id="min-age">
-            <option value="" selected disabled>Minimum Age</option>
+            <option value="" selected>Minimum Age</option>
             <% (0..35).to_a.each do |n| %>
               <option value="<%= n %>"><%= n %></option>
             <% end %>
@@ -90,7 +94,7 @@
 
         <div class="col-md-4">
           <select class="form-control" name="max-age" id="max-age">
-            <option value="" selected disabled>Maximum Age</option>
+            <option value="" selected>Maximum Age</option>
             <% (0..35).to_a.each do |n| %>
               <option value="<%= n %>"><%= n %></option>
             <% end %>
@@ -102,6 +106,7 @@
         <label class="col-md-2 control-label" for="color">Color</label>
         <div class="col-md-4">
           <select multiple class="form-control" name="color" id="color">
+            <option value="">-- Select Any Color</option>
             <% Color.all.each do |color| %>
               <option value="<%= color.id %>"><%= color.name %></option>
             <% end %>
@@ -113,7 +118,7 @@
         <label class="col-md-2 control-label" for="min-temp">Temperament</label>
         <div class="col-md-4">
           <select class="form-control" name="min-temp" id="min-temp">
-            <option value="" selected disabled>Minimum Temperament</option>
+            <option value="" selected>Minimum Temperament</option>
             <% (1..10).to_a.each do |n| %>
               <option value="<%= n %>"><%= n %></option>
             <% end %>
@@ -122,7 +127,7 @@
 
         <div class="col-md-4">
           <select class="form-control" name="max-temp" id="max-temp">
-            <option value="" selected disabled>Maximum Temperament</option>
+            <option value="" selected>Maximum Temperament</option>
             <% (1..10).to_a.each do |n| %>
               <option value="<%= n %>"><%= n %></option>
             <% end %>
@@ -133,10 +138,11 @@
       <div class="form-group">
         <label class="col-md-2 control-label" for="state">State</label>
         <div class="col-md-4">
-          <select class="form-control" name="state" id="state">
-            <option>State1</option>
-            <option>State2</option>
-            <option>State3</option>
+          <select multiple class="form-control" name="state" id="state">
+            <option value="">-- Select Any State --</option>
+            <% us_states.each do |state| %>
+              <option value="<%= state[1] %>"><%= state[0] %></option>
+            <% end %>
           </select>
         </div>
       </div>
