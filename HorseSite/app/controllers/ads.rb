@@ -25,6 +25,12 @@ HorseSite::App.controllers :ads do
     erb :search, :layout => :layout
   end
 
+  post '/search' do
+    @ads = Ad.all
+    erb :adslist, :layout => :layout
+  end
+    
+
   get '/sell' do
     erb :sell, :layout => :layout
   end
