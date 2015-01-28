@@ -26,7 +26,14 @@ HorseSite::App.controllers :ads do
   end
 
   post '/search' do
+    title = params[:title]
+    name = params[:name]
     @ads = Ad.all
+
+    @ads &= Ad.all(:title => title) if title.length != 0 
+    if name.length != 0
+      @ads &= Ad.all(:name => name)
+    end
     erb :adslist, :layout => :layout
   end
     
