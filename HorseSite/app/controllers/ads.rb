@@ -26,14 +26,24 @@ HorseSite::App.controllers :ads do
   end
 
   post '/search' do
-    title = params[:title]
-    name = params[:name]
+    title = params['title']
+    name = params['name']
+    min_price = params['min-price']
+    max_price = params['max-price']
+    min_age = params['min-age']
+    max_age = params['max-age']
+    min_temp = params['min-temp']
+    max_temp = params['max-temp']
     @ads = Ad.all
 
     @ads &= Ad.all(:title => title) if title.length != 0 
-    if name.length != 0
-      @ads &= Ad.all(:name => name)
-    end
+    @ads &= Ad.all(:name => name) if name.length != 0
+    @ads &= Ad.all(:price.gte => min_price) if min_price.length != 0
+    @ads &= Ad.all(:price.lte => max_price) if max_price.length != 0
+    @ads &= Ad.all(:age.gte => min_age) if min_age.length != 0
+    @ads &= Ad.all(:age.lte => max_age) if max_age.length != 0
+    @ads &= Ad.all(:temp.gte => min_temp) if min_temp.length != 0
+    @ads &= Ad.all(:temp.lte => max_temp) if max_temp.length != 0
     erb :adslist, :layout => :layout
   end
     
