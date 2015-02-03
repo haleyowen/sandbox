@@ -6,12 +6,6 @@ import java.util.Arrays;
 public class Pangram {
   public static void main(String[]args) {
     Scanner input = new Scanner(System.in);
-    Set<Character> alpha = new TreeSet<Character>();
-    String alphaStr = "abcdefghijklmnopqrstuvwxyz";
-
-    for(char x : alphaStr.toCharArray())
-      alpha.add(x);
-
     Set<Character> letters = new TreeSet<Character>();
     String line = input.nextLine().toLowerCase();
 
@@ -20,7 +14,7 @@ public class Pangram {
         letters.add(line.charAt(i));
     }
 
-    if(letters.equals(alpha))
+    if(letters.size() >= 26)
       System.out.println("pangram");
     else
       System.out.println("not pangram");
