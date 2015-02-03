@@ -8,7 +8,7 @@ public class PalindromeIndex {
     input.nextLine();
 
     for(int x = 0; x < times; x++) {
-      String line = input.nextLine();
+      StringBuilder line = new StringBuilder(input.nextLine());
       boolean already = isPalindrome(line);
 
       if(already) {
@@ -16,16 +16,19 @@ public class PalindromeIndex {
       }
 
       for(int i = 0; i < line.length() && !already; i++) {
-        String temp = line.substring(0, i) + line.substring(i+1);
-        if(isPalindrome(temp)) {
+        char let = line.charAt(i);
+        line = line.deleteCharAt(i);
+        if(isPalindrome(line)) {
           System.out.println(i);
           break;
         }
+        line = line.insert(i,let);
       }
     }
   }
 
-  private static boolean isPalindrome(String str) {
-    return str.equals(new StringBuilder(str).reverse().toString());
+  private static boolean isPalindrome(StringBuilder str) {
+    System.out.println(str);
+    return str.toString().equals(str.reverse().toString());
   }
 }
