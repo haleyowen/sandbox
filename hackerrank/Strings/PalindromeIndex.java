@@ -28,7 +28,8 @@ public class PalindromeIndex {
   }
 
   private static boolean isPalindrome(StringBuilder str) {
-    System.out.println(str);
-    return str.toString().equals(str.reverse().toString());
+    String reverse = str.reverse().toString();
+    str.reverse();
+    return str.toString().equals(reverse);
   }
 }
