@@ -9,7 +9,6 @@ public class Anagram {
 
     for(int x = 0; x < times; x++) {
       String line = input.nextLine();
-
       System.out.println( anagram(line) );
 
     }
@@ -24,15 +23,17 @@ public class Anagram {
     else {
       int len = str.length();
       for(int x = 0; x < len/2; x++) {
-        if(firstHalf.containsKey(str.charAt(x)))
-          firstHalf.put(str.charAt(x), firstHalf.get(str.charAt(x)) + 1);
-        else if(!firstHalf.containsKey(str.charAt(x)))
-          firstHalf.put(str.charAt(x), 1);
-
-        if(secondHalf.containsKey(str.charAt(len/2 + x)))
-          secondHalf.put(str.charAt(len/2 + x), secondHalf.get(str.charAt(len/2 + x)) + 1);
-        else if(!secondHalf.containsKey(str.charAt(len/2 + x)))
-          secondHalf.put(str.charAt(len/2 + x), 1);
+        char fChar = str.charAt(x);
+        if(firstHalf.containsKey(fChar))
+          firstHalf.put(fChar, firstHalf.get(fChar) + 1);
+        else if(!firstHalf.containsKey(fChar))
+          firstHalf.put(fChar, 1);
+        
+        char sChar = str.charAt(len/2 + x);
+        if(secondHalf.containsKey(sChar))
+          secondHalf.put(sChar, secondHalf.get(sChar) + 1);
+        else if(!secondHalf.containsKey(sChar))
+          secondHalf.put(sChar, 1);
       }
 
       int result = 0;
