@@ -39,12 +39,10 @@ public class Anagram {
 
       for(char i : secondHalf.keySet()) {
         if(firstHalf.containsKey(i))
-          result += secondHalf.get(i) - firstHalf.get(i);
-        else
-          result += secondHalf.get(i);
+          result += Math.min(firstHalf.get(i), secondHalf.get(i));
       }
 
-      return result;
+      return len/2 - result;
     }
   }
 }
