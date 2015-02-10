@@ -1,4 +1,5 @@
-module HorseSite
+mdule HorseSite
+
   class App < Padrino::Application
     register Padrino::Mailer
     register Padrino::Helpers
