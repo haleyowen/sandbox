@@ -11,17 +11,16 @@ public class Insertion1 {
     for(int x = 0; x < size; x++) 
       arr[x] = input.nextInt();
 
-    System.out.println(Arrays.toString(arr));
-
     for(int i = 1; i < size; i++) {
       int cur = arr[i];
       int j = i - 1;
-      while(cur > arr[j]) {
+      while(j >= 0 && cur < arr[j]) {
         arr[j+1] = arr[j];
         j--;
         System.out.println(Arrays.toString(arr));
       }
-      arr[j] = cur;
+      arr[j+1] = cur;
     }
+    System.out.println(Arrays.toString(arr));
   }
 }
