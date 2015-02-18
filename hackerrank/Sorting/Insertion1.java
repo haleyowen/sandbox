@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class Insertion1 {
   public static void main(String[]args) {
@@ -17,10 +16,17 @@ public class Insertion1 {
       while(j >= 0 && cur < arr[j]) {
         arr[j+1] = arr[j];
         j--;
-        System.out.println(Arrays.toString(arr));
+        printArray(arr);
       }
       arr[j+1] = cur;
     }
-    System.out.println(Arrays.toString(arr));
+    printArray(arr);
+  }
+
+  private static void printArray(int[] a) {
+    for(int i : a) {
+      System.out.print(i + " ");
+    }
+    System.out.println();
   }
 }
