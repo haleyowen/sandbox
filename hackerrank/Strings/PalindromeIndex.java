@@ -17,7 +17,7 @@ public class PalindromeIndex {
 
       for(int i = 0; i < line.length() && !already; i++) {
         char let = line.charAt(i);
-        line = line.replace(Character.toString(let), "");
+        line = line.replaceFirst(Character.toString(let), "");
         if(isPalindrome(line)) {
           System.out.println(i);
           break;
@@ -29,7 +29,7 @@ public class PalindromeIndex {
 
   private static boolean isPalindrome(String str) {
     for(int i = 0; i < str.length()/2; i++) {
-      if(str.charAt(i) != str.charAt(str.length() - i))
+      if(str.charAt(i) != str.charAt(str.length() - i - 1))
         return false;
     }
     return true;
