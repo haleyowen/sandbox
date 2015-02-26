@@ -6,12 +6,12 @@ public class Stones {
   public static void main(String[]args) {
     Scanner input = new Scanner(System.in);
 
-    int count = input.nextInt();
+    int gemSize = input.nextInt();
     input.nextLine();
     
     TreeMap<Character, Integer> stones = new TreeMap<Character, Integer>();
 
-    for(int x = 0; x < count; x++) {
+    for(int x = 0; x < gemSize; x++) {
       String line = input.nextLine();
       HashSet<Character> temp = new HashSet<Character>();
 
@@ -25,12 +25,12 @@ public class Stones {
           stones.put(i, 1);
       }
     }
-    int c = 0;
+    int count = 0;
 
     for(char i : stones.keySet()) {
-      if(stones.get(i) == count)
-        c++;
+      if(stones.get(i) == gemSize)
+        count++;
     }
-    System.out.println(c);
+    System.out.println(count);
   }
 }
