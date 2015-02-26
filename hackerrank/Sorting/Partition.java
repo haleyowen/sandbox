@@ -14,5 +14,17 @@ public class Partition {
     List<Integer> left = new ArrayList<Integer>();
     List<Integer> right = new ArrayList<Integer>();
 
+    for(int i : array)
+      if(i < p)
+        left.add(i);
+      else
+        right.add(i);
+
+    left.add(p);
+    left.addAll(right);
+
+    for(int i : left)
+      System.out.print(i+" ");
+    System.out.println();
   }
 }
