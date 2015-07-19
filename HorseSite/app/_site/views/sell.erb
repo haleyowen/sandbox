@@ -1,0 +1,242 @@
+<div>
+
+  <div class="page-header"><h1>Ad Details</h1></div>
+
+  <form class="form-horizontal" action="/ads/sell" method="post">
+    <div class="container">
+      <% if form.failed_on?(:title) %>
+        <div class="form-group required has-error">
+          <label class="col-md-2 control-label" for="title">Title</label>
+          <div class="col-md-4"><input type="text" class="form-control" name="title" id="title" placeholder="Enter a title."></div>
+          <div class="col-md-6"><p class="form-control-static">2010 AQHA Cutting Mare</p></div>
+        </div>
+      <% else %>
+        <div class="form-group required">
+          <label class="col-md-2 control-label" for="title">Title</label>
+          <div class="col-md-4"><input class="form-control" type="text" name="title" id="title"></div>
+          <div class="col-md-6"><p class="form-control-static">2010 AQHA Cutting Mare</p></div>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="name">Horse Name</label>
+        <div class="col-md-4"><input class="form-control" type="text" name="name" id="name"></div>
+      </div>
+
+      <% if form.failed_on?(:price) %>
+        <div class="form-group required has-error">
+          <label class="col-md-2 control-label" for="price">Price</label>
+          <div class="col-md-4">
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input class="form-control" type="text" placeholder="Enter a price as a whole number." name="price" id="price">
+              <span class="input-group-addon">.00</span>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div class="form-group required">
+          <label class="col-md-2 control-label" for="price">Price</label>
+          <div class="col-md-4">
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input class="form-control" type="text" name="price" id="price">
+              <span class="input-group-addon">.00</span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <% if form.failed_on?(:description) %>
+        <div class="form-group required has-error">
+          <label class="col-md-2 control-label" for="description">Description</label>
+          <div class="col-md-4">
+            <textarea class="form-control" rows="4" placeholder="Enter a description." name="description" id="description"></textarea>
+          </div>
+          <div class="col-md-6">
+            <p class="form-control-static">What to include: Registration papers? Professional training? 
+            Current on shots and coggins? Any health issues or bad habits? Height?</p>
+          </div>
+        </div>
+      <% else %>
+        <div class="form-group required">
+          <label class="col-md-2 control-label" for="description">Description</label>
+          <div class="col-md-4">
+            <textarea class="form-control" rows="4" name="description" id="description"></textarea>
+          </div>
+          <div class="col-md-6">
+            <p class="form-control-static">What to include: Registration papers? Professional training? 
+            Current on shots and coggins? Any health issues or bad habits? Height?</p>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="primary-breed">Primary Breed</label>
+        <div class="col-md-4">
+          <select class="form-control" name="primary-breed" id="primary-breed">
+            <% Breed.all.each do |breed| %>
+              <option value="<%= breed.id %>"><%= breed.name %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="secondary-breed">Secondary Breed</label>
+        <div class="col-md-4">
+          <select class="form-control" name="secondary-breed" id="secondary-breed">
+            <% Breed.all.each do |breed| %>
+              <option value="<%= breed.id %>"><%= breed.name %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="disciplines">Disciplines</label>
+        <div class="col-md-4">
+          <select multiple class="form-control" name="disciplines" id="disciplines">
+            <% Discipline.all.each do |discipline| %>
+              <option value="<%= discipline.id %>"><%= discipline.name %></option>
+            <% end %>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <p class="form-control-static">Hold down ctrl to select more than one.</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="attributes">Attributes</label>
+        <div class="col-md-4">
+          <select multiple class="form-control" name="attributes" id="attributes">
+            <% Attribute.all.each do |attribute| %>
+              <option value="<%= attribute.id %>"><%= attribute.name %></option>
+            <% end %>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <p class="form-control-static">Hold down ctrl to select more than one.</p>
+        </div>
+      </div>
+
+      <% if form.failed_on?(:gender) %>
+        <div class="form-group required has-error">
+        <% else %>
+          <div class="form-group required">
+          <% end %>
+          <label class="col-md-2 control-label" for="gender">Gender</label>
+          <div class="col-md-4">
+            <select class="form-control" name="gender" id="gender">
+              <option value="gelding">Gelding</option>
+              <option value="mare">Mare</option>
+              <option value="stallion">Stallion</option>
+            </select>
+          </div>
+        </div>
+
+        <% if form.failed_on?(:age) %>
+          <div class="form-group required has-error">
+          <% else %>
+            <div class="form-group required">
+            <% end %>
+            <label class="col-md-2 control-label" for="age">Age</label>
+            <div class="col-md-4">
+              <select class="form-control" name="age" id="age">
+                <% (0..35).to_a.each do |n| %>
+                  <option value="<%= n %>"><%= n %></option>
+                <% end %>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-2 control-label" for="color">Color</label>
+            <div class="col-md-4">
+              <select class="form-control" name="color" id="color">
+                <% Color.all.each do |color| %>
+                  <option value="<%= color.id %>"><%= color.name %></option>
+                <% end %>
+              </select>
+            </div>
+          </div>
+
+          <% if form.failed_on?(:temp) %>
+            <div class="form-group required has-error">
+            <% else %>
+              <div class="form-group required">
+              <% end %>
+              <label class="col-md-2 control-label" for="temp">Temperament</label>
+              <div class="col-md-4">
+                <select class="form-control" name="temp" id="temp">
+                  <% (1..10).to_a.each do |n| %>
+                    <option value="<%= n %>"><%= n %></option>
+                  <% end %>
+                </select>
+              </div>
+              <div class="col-md-2"><p class="form-control-static">1 - Very Calm</p></div>
+              <div class="col-md-2"><p class="form-control-static">10 - Extremely Hot</p></div>
+            </div>
+
+            <h2>Location</h2>
+
+            <% if form.failed_on?(:state) %>
+              <div class="form-group required has-error">
+              <% else %>
+                <div class="form-group required">
+                <% end %>
+                <label class="col-md-2 control-label" for="state">State</label>
+                <div class="col-md-4">
+                  <select class="form-control" name="state" id="state">
+                    <% us_states.each do |state| %>
+                      <option value="<%= state[1] %>"><%= state[0] %></option>
+                    <% end %>
+                  </select>
+                </div>
+              </div>
+
+              <% if form.failed_on?(:zip) %>
+                <div class="form-group required has-error">
+                  <label class="col-md-2 control-label" for="zip">Zip Code</label>
+                  <div class="col-md-4">
+                    <input class="form-control" type="text" placeholder="Enter your current 5 digit zip code." name="zip" id="zip">
+                  </div>
+                </div>
+              <% else %>
+                <div class="form-group required">
+                  <label class="col-md-2 control-label" for="zip">Zip Code</label>
+                  <div class="col-md-4">
+                    <input class="form-control" type="text" name="zip" id="zip">
+                  </div>
+                </div>
+              <% end %>
+
+              <h2>Contact Information</h2>
+
+              <% if form.failed_on?(:email) %>
+                <div class="form-group required has-error">
+                  <label class="col-md-2 control-label" for="email">Email</label>
+                  <div class="col-md-4"><input class="form-control" placeholder="Enter a valid email address." type="text" name="email" id="email"></div>
+                </div>
+              <% else %>
+                <div class="form-group required">
+                  <label class="col-md-2 control-label" for="email">Email</label>
+                  <div class="col-md-4"><input class="form-control" type="text" name="email" id="email"></div>
+                </div>
+              <% end %>
+
+              <div class="form-group">
+                <label class="col-md-2 control-label" for="phone">Phone Number</label>
+                <div class="col-md-4"><input class="form-control" type="text" name="phone" id="phone"></div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-2 control-label" for="address">Address</label>
+                <div class="col-md-4"><textarea class="form-control" rows="3" name="address" id="address"></textarea></div>
+              </div>
+
+              <button type="submit" class="btn btn-default">Next</button>
+            </div>
+          </form>
+        </div>
